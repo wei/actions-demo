@@ -1,0 +1,17 @@
+name: Retrospective Reminder
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: 0 23 * * 4
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Retrospective Reminder
+        run: |
+          curl -X POST "${{ secret.DISCORD_WEBHOOK_URL }}" -d "content=📝 **HEY YOU!** <@&1019394224669605988> it's time to post your retrospective!!!!!!!!!!!!"
