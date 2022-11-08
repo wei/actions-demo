@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Send Retrospective Reminder
         run: |
-          curl -X POST "${{ secrets.DISCORD_WEBHOOK_URL }}" -d 'content=📝 **HEY YOU!** ${{ secrets.ROLE_TAG }} time to post your retrospective!!!!!!!!!!!! https://c.tenor.com/jhHMmyw7g5oAAAAM/retrospective.gif'
+          curl -X POST "${{ secrets.DISCORD_WEBHOOK_URL }}" --data-urlencode 'content=📝 **HEY YOU!** ${{ secrets.ROLE_TAG }} time to post your retrospective!!!!!!!!!!!! https://c.tenor.com/jhHMmyw7g5oAAAAM/retrospective.gif'
