@@ -1,0 +1,20 @@
+name: List Hardware and Publish HTML Page to GitHub Pages
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  list-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: List Hardware and Output HTML Page
+        run: sudo lshw –html > index.html
+
+      - name: Publish index.html to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
