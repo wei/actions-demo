@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: List Hardware and Output HTML Page
-        run: sudo lshw –html > index.html
+        run: sudo lshw -html > index.html
 
       - name: Publish index.html to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
